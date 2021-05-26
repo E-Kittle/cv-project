@@ -4,17 +4,17 @@ import PersonalResume from './resumeComponents/PersonalResume'
 
 class ResumeManager extends React.Component {
     //constructor if needed
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 
     render() {
+        const { persInfo } = this.props;
 
-        console.log({props.persInfo})
         return (
             <div className="container resumeContainer">
-                <PersonalResume />
+                <PersonalResume persInfo={persInfo}/>
 
                 <div>
                     <h2>Employment Experience</h2>

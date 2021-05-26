@@ -1,12 +1,12 @@
 import React from "react";
 import './managers.css';
-import PersonalInfo from "./formComponents/PersonalInfo"
+import PersonalForm from "./formComponents/PersonalForm"
 
 class FormManager extends React.Component {
     //constructor if needed
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 
     render() {
@@ -14,7 +14,7 @@ class FormManager extends React.Component {
             <div className="container">
                 <div>
                     <h2 className="formSection">Personal Information</h2>
-                    <PersonalInfo handleNameChange={this.props.handleNameChange} />
+                    <PersonalForm handleNameChange={this.props.handleNameChange} />
                     {/* Personal Info Component - Always loads */}
                 </div>
 
