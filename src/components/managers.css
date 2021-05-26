@@ -22,16 +22,22 @@ label {
     overflow:hidden;
 }
 
-form {
-    
-    display: flex;
-    flex-direction: column;
-}
+/* Styling for the form */
+    form {
+        
+        display: flex;
+        flex-direction: column;
+    }
 
-form > input {
-    margin: 3px 0;
-    width: 80%;
-}
+    form > input {
+        margin: 3px 0;
+        width: 80%;
+    }
+    
+    textarea {
+        width: 80%;
+        max-width: 100%;
+    }
 
 
 /* Styling for the Resume */
@@ -47,11 +53,19 @@ form > input {
         display: flex;
         flex-direction: column;
         height: 5em;
-        border-bottom: solid;
+        border-bottom: solid rgba(105, 206, 240, 0.555);
         justify-content: space-between;
         margin: 10px 5px;
     }
 
     .personalInfoWrapper h2 {
         font-size: 2em;
+    }
+
+    #objective {
+        height: 8em;
+    }
+
+    .section {
+        margin: 20px 0;
     }
