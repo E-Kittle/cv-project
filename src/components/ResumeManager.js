@@ -10,9 +10,11 @@ class ResumeManager extends React.Component {
 
 
     render() {
+
+        console.log({props.persInfo})
         return (
             <div className="container resumeContainer">
-                <PersonalResume persInfo={props.persInfo}/>
+                <PersonalResume />
 
                 <div>
                     <h2>Employment Experience</h2>

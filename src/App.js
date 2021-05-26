@@ -38,12 +38,13 @@ class App extends React.Component {
   render() {
     const { persInfo } = this.state;
 
+
     return (
       <div className="pageWrapper">
         <Header />
         <div className="resumeWrapper">
           <FormManager handleNameChange={this.handleNameChange}/>
-          <ResumeManager persInfo={persInfo}/>
+          <ResumeManager persInfo={persInfo} />
         </div>
       </div>
     );
