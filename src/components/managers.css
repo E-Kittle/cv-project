@@ -77,3 +77,8 @@ label {
         text-decoration: underline;
         padding-bottom: 3px;
     }
+
+    .educat {
+        text-indent: 1em;
+        padding: 10px 0;
+    }

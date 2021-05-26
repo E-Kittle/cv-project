@@ -5,9 +5,20 @@ function EducationResume(props) {
 
     return(
         <div>
-            <h3>University of this sucks</h3>
-            <p>Receptionist <span>|</span> Largo, Fl <span>|</span> May 2012 - Present</p>
+            <div className="educat">
+                <h3>University of this sucks</h3>
+                <p>Bachelors in Biology <span>|</span> Largo, Fl <span>|</span> May 2012 - Present</p>
+            </div>
+            <div className="educat">
+                <h3>University of this ALSO sucks</h3>
+                <p>Bachelors in exhaustion <span>|</span> Largo, Fl <span>|</span> May 2012 - Present</p>
+                <h4>Achievements: </h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Officia, necessitatibus consequatur est aliquam in tempore dolor excepturi nesciunt odit quaerat placeat hic quas ullam, maiores voluptas quasi sint similique quam animi enim ut doloremque totam quos! Repudiandae temporibus dolorem quasi!</p>
+            </div>
         </div>
+    
+    
     )
 
 }
