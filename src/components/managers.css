@@ -72,3 +72,8 @@ label {
     .section {
         margin: 20px 0;
     }
+
+    .resuHeader {
+        text-decoration: underline;
+        padding-bottom: 3px;
+    }

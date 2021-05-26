@@ -1,6 +1,7 @@
 import React from "react";
 import './managers.css';
-import PersonalForm from "./formComponents/PersonalForm"
+import PersonalForm from "./formComponents/PersonalForm";
+import SkillsForm from "./formComponents/SkillsForm";
 
 class FormManager extends React.Component {
     //constructor if needed
@@ -30,6 +31,7 @@ class FormManager extends React.Component {
 
                 <div className="containerSection">
                     <h2>Skills</h2>
+                    <SkillsForm />
                     {/* Dynamically add skills */}
                 </div>
 

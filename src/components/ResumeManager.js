@@ -1,6 +1,9 @@
 import React from "react";
 import './managers.css';
-import PersonalResume from './resumeComponents/PersonalResume'
+import PersonalResume from './resumeComponents/PersonalResume';
+import SkillsResume from './resumeComponents/SkillsResume';
+import EducationResume from './resumeComponents/EducationResume';
+import EmploymentResume from './resumeComponents/EmpolymentResume';
 
 class ResumeManager extends React.Component {
     //constructor if needed
@@ -15,19 +18,22 @@ class ResumeManager extends React.Component {
         return (
             <div className="container resumeContainer">
                 <PersonalResume persInfo={persInfo}/>
-
+                <br />
                 <div>
-                    <h2>Employment Experience</h2>
+                    <h2 class='resuHeader'>Employment Experience</h2>
+                    <EmploymentResume />
                     {/* Dynamically load employment information - Use {employment} to create an array in the render section. This allows me to add additional employment as needed */}
                 </div>
-
+                <br />
                 <div>
-                    <h2>Education</h2>
+                    <h2 class='resuHeader'>Education</h2>
+                    <EducationResume />
                     {/* Dynamically add education */}
                 </div>
-
+                    <br />
                 <div>
-                    <h2>Skills</h2>
+                    <h2 class='resuHeader'>Skills</h2>
+                    <SkillsResume />
                     {/* Dynamically add skills */}
                 </div>
 
