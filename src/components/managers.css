@@ -1,0 +1,57 @@
+
+.headerWrapper {
+    text-align: center;
+    border-bottom: solid black;
+    padding-top: 2em;
+}
+
+.container {
+    margin: 30px;
+    border: solid;
+    width: 50%;
+    padding: 10px 5px;
+}
+
+
+label {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+form {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+form > input {
+    margin: 3px 0;
+    width: 80%;
+}
+
+
+/* Styling for the Resume */
+.resumeContainer {
+    background-color: white;
+}
+    /* Styling for the personal info */
+    span {
+        color: rgba(105, 206, 240, 0.555);
+    }
+
+    .personalInfoWrapper {
+        display: flex;
+        flex-direction: column;
+        height: 5em;
+        border-bottom: solid;
+        justify-content: space-between;
+        margin: 10px 5px;
+    }
+
+    .personalInfoWrapper h2 {
+        font-size: 2em;
+    }
