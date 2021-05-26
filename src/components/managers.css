@@ -22,9 +22,8 @@ label {
     overflow:hidden;
 }
 
-/* Styling for the form */
+/* Styling for the forms */
     form {
-        
         display: flex;
         flex-direction: column;
     }
@@ -39,6 +38,10 @@ label {
         max-width: 100%;
     }
 
+    .containerSection > h2 {
+        margin-top: 20px;
+        text-decoration: underline;
+    }
 
 /* Styling for the Resume */
 .resumeContainer {
