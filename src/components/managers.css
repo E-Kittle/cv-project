@@ -36,6 +36,7 @@ label {
     textarea {
         width: 80%;
         max-width: 100%;
+        margin: 3px 0;
     }
 
     .containerSection > h2 {

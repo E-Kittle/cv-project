@@ -21,12 +21,21 @@ class App extends React.Component {
 
       employmentArr: [],
 
+      employmentInfo: {
+        workName: '',
+        workLocation: '',
+        role: '',
+        workDates: '',
+        workAchievements: '',
+      },
+
       educationArr: [],
 
       skillsArr: [],
     }
   }
 
+  // This handles loading, and saving data dynamically for the personal information
   handleNameChange = (e) => {
     console.log(e.target.id)
 
@@ -63,56 +72,6 @@ class App extends React.Component {
         objective: newObjective
       }
     }, () => console.log(this.state.persInfo) )
-
-
-    // End of experiment
-    // if (e.target.id === 'name') {
-    //   this.setState({
-    //     persInfo: {
-    //       name: e.target.value,
-    //       phone: this.state.persInfo.phone,
-    //       email: this.state.persInfo.email,
-    //       address: this.state.persInfo.address,
-    //       objective: this.state.persInfo.objective
-    //     }
-    //   }, () => console.log(this.state.persInfo) )
-    // }
-    // else if (e.target.id === 'phone') {
-    //   this.setState({
-    //     persInfo: {
-    //       name: this.state.persInfo.name,
-    //       phone: e.target.value,
-    //       email: this.state.persInfo.email,
-    //       address: this.state.persInfo.address,
-    //       objective: this.state.persInfo.objective
-    //     }
-    //   }, () => console.log(this.state.persInfo) )
-    // }
-    // else if (e.target.id === 'email') {
-    //   this.setState({
-    //     persInfo: {
-    //       name: this.state.persInfo.name,
-    //       phone: this.state.persInfo.phone,
-    //       email: e.target.value,
-    //       address: this.state.persInfo.address,
-    //       objective: this.state.persInfo.objective
-    //     }
-    //   }, () => console.log(this.state.persInfo) )
-    // }
-    // else {      //e.target.id then === address
-    //   this.setState({
-    //     persInfo: {
-    //       name: this.state.persInfo.name,
-    //       phone: this.state.persInfo.phone,
-    //       address: e.target.value,
-    //       email: this.state.persInfo.email,
-    //       objective: this.state.persInfo.objective
-    //     }
-    //   }, () => console.log(this.state.persInfo) )
-    // }
-
-
-
   };
 
   render() {

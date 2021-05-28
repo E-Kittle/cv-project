@@ -6,7 +6,7 @@ import React from "react";
 function EducationForm(props) {
     return (
         <form>
-            <label htmlFor="schoolName">School Name</label>
+            {/* <label htmlFor="schoolName">School Name</label>
             <input type="text" id="schoolName" name="schoolName" placeholder="School Name" onChange={}></input>
 
             <label htmlFor="schoolLocation">School Location</label>
@@ -21,8 +21,8 @@ function EducationForm(props) {
             {/* <label htmlFor="schoolEnd">End Date</label>
             <input type="text" id="schoolEnd" name="schoolEnd" placeholder="End Date: Any Format" onChange={}></input> */}
 
-            <label htmlFor="schoolAchievements">Description of Achievements</label>
-            <textarea id="schoolAchievements" name="schoolAchievements" placeholder="Description of Achievements" onChange={}></textarea>
+            {/* <label htmlFor="schoolAchievements">Description of Achievements</label>
+            <textarea id="schoolAchievements" name="schoolAchievements" placeholder="Description of Achievements" onChange={}></textarea> */} */}
         </form>
     )
 }

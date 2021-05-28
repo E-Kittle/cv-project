@@ -2,6 +2,8 @@ import React from "react";
 import './managers.css';
 import PersonalForm from "./formComponents/PersonalForm";
 import SkillsForm from "./formComponents/SkillsForm";
+import EducationForm from "./formComponents/EducationForm";
+import EmploymentForm from "./formComponents/EmploymentForm";
 
 class FormManager extends React.Component {
     //constructor if needed
@@ -21,6 +23,7 @@ class FormManager extends React.Component {
 
                 <div className="containerSection">
                     <h2>Employment Experience</h2>
+                    <EmploymentForm />
                     {/* Dynamically load employment information - Use {employment} to create an array in the render section. This allows me to add additional employment as needed */}
                 </div>
 
