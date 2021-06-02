@@ -195,7 +195,7 @@ class App extends React.Component {
                 <br />
                 <div>
                     <h2 className='resuHeader'>Employment Experience</h2>
-                    <EmploymentResume />
+                    <EmploymentResume employmentArr={employmentArr}/>
                     {/* Dynamically load employment information - Use {employment} to create an array in the render section. This allows me to add additional employment as needed */}
                 </div>
                 <br />
