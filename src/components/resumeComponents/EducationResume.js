@@ -2,22 +2,31 @@ import React from 'react';
 
 function EducationResume(props) {
     //map through an array of education objects and create the correct div element for them, then place the array in the DOM
+    const { educationArr } = props;
 
+    const educationSection = educationArr.map((school) => {
+        return (
+
+            <div className="educat" key={school.id}>
+                <h3>{school.schoolName}</h3>
+                <p>{school.degree} <span>|</span> {school.schoolLocation} <span>|</span> {school.schoolDates}</p>
+                <p>{school.schoolAchievements}</p>
+            </div>
+                )
+    })
     return(
         <div>
-            <div className="educat">
-                <h3>University of this sucks</h3>
-                <p>Bachelors in Biology <span>|</span> Largo, Fl <span>|</span> May 2012 - Present</p>
-            </div>
-            <div className="educat">
+            {/* <div className="educat">
                 <h3>University of this ALSO sucks</h3>
                 <p>Bachelors in exhaustion <span>|</span> Largo, Fl <span>|</span> May 2012 - Present</p>
                 <h4>Achievements: </h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Officia, necessitatibus consequatur est aliquam in tempore dolor excepturi nesciunt odit quaerat placeat hic quas ullam, maiores voluptas quasi sint similique quam animi enim ut doloremque totam quos! Repudiandae temporibus dolorem quasi!</p>
-            </div>
+            </div> */}
+            {educationSection}
         </div>
     
+
     
     )
 

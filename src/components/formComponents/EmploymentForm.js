@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function EducationForm(props) {
+function EmploymentForm(props) {
     const { handleNewEmployment, handleEmployment, employmentArr } = props;
 
     const employmentSection = employmentArr.map((job, index) => {
@@ -35,9 +35,9 @@ function EducationForm(props) {
     return (
         <div>
             {employmentSection}
-            <button className="newEploymentButton" onClick={handleNewEmployment}>+ Add</button>
+            <button className="newEmploymentButton" onClick={handleNewEmployment}>+ Add</button>
         </div>
     )
 }
 
-export default EducationForm;
+export default EmploymentForm;

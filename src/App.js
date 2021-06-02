@@ -111,6 +111,44 @@ class App extends React.Component {
       })
     }
 
+    handleNewEducation = () => {
+      let educationInfo = {
+        schoolName: 'Company Name',
+        schoolLocation: 'Company Location',
+        degree: 'Role',
+        schoolDates: 'Dates Worked - Example: May 2018-Present',
+        schoolAchievements: 'Paragraph on your achievements',
+        id: uniqid(),
+      };
+
+      this.setState({
+        educationArr: this.state.educationArr.concat(educationInfo)
+      }, () => console.log(this.state.educationArr))
+    }
+
+    handleEducation = (e) => {
+      let tempArr = [...this.state.educationArr];
+      
+      if (e.target.className === 'delSkill'){
+        let index = this.state.educationArr.findIndex(school => {
+          return (school.id === e.target.id)
+        })        
+        tempArr.splice(index, 1);
+      }
+      else {
+        let index = this.state.educationArr.findIndex(school => {
+          return (school.id === e.target.className)
+        })
+
+        let change = e.target.id;
+        tempArr[index][change] = e.target.value;
+      }
+
+      this.setState({
+        educationArr: tempArr
+      }, () => console.log(this.state.educationArr))
+    }
+
   // // This handles loading, and saving data dynamically for the personal information
   handleNameChange = (e) => {
 
@@ -151,8 +189,8 @@ class App extends React.Component {
 
 
   render() {
-    const { persInfo, skillsArr, employmentArr } = this.state;
-    const { handleNameChange, handleNewSkill, handleSkill, handleNewEmployment, handleEmployment} = this;
+    const { persInfo, skillsArr, employmentArr, educationArr } = this.state;
+    const { handleNameChange, handleNewSkill, handleSkill, handleNewEmployment, handleEmployment, handleNewEducation, handleEducation} = this;
 
 
     return (
@@ -177,7 +215,7 @@ class App extends React.Component {
 
                 <div className="containerSection">
                     <h2>Education</h2>
-                    <EducationForm />
+                    <EducationForm handleNewEducation={handleNewEducation} handleEducation={handleEducation} educationArr={educationArr}/>
                     {/* Dynamically add education */}
                 </div>
 
@@ -200,8 +238,8 @@ class App extends React.Component {
                 </div>
                 <br />
                 <div>
-                    <h2 className='resuHeader'>Education</h2>
-                    <EducationResume />
+                    <h2 className='resuHeader' >Education</h2>
+                    <EducationResume educationArr={educationArr} />
                     {/* Dynamically add education */}
                 </div>
                     <br />

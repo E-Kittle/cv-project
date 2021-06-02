@@ -1,4 +1,5 @@
 import React from 'react';
+import SkillsForm from '../formComponents/SkillsForm'
 
 function SkillsResume(props) {
     const { skillsArr } = props;
