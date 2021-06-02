@@ -3,8 +3,19 @@ import React from 'react';
 import uniqid from 'uniqid';
 import './styles/globalStyles.css';
 import Header from "./components/Header";
-import FormManager from "./components/FormManager";
-import ResumeManager from "./components/ResumeManager";
+// import FormManager from "./components/FormManager";
+
+// Form Components
+import PersonalForm from "./components/formComponents/PersonalForm";
+import EmploymentForm from "./components/formComponents/EmploymentForm";
+import EducationForm from "./components/formComponents/EducationForm";
+import SkillsForm from "./components/formComponents/SkillsForm";
+
+// Resume Components
+import PersonalResume from "./components/resumeComponents/PersonalResume";
+import EmploymentResume from "./components/resumeComponents/EmploymentResume";
+import EducationResume from "./components/resumeComponents/EducationResume";
+import SkillsResume from "./components/resumeComponents/SkillsResume";
 
 class App extends React.Component {
 
@@ -111,6 +122,7 @@ class App extends React.Component {
 
   render() {
     const { persInfo, skillsArr } = this.state;
+    const { handleNameChange, handleNewSkill, handleSkill} = this;
 
 
     return (
@@ -118,8 +130,57 @@ class App extends React.Component {
         <Header />
         <div className="resumeWrapper">
           {/* formManager */}
-          <FormManager handleNameChange={this.handleNameChange} handleNewSkill={this.handleNewSkill} skillsArr={skillsArr} handleChangedSkill={this.handleChangedSkill} handleSkill={this.handleSkill} handleDelSkill={this.handleDelSkill}/>
-          <ResumeManager persInfo={persInfo} skillsArr={skillsArr} />
+          {/* <FormManager handleNameChange={this.handleNameChange} handleNewSkill={this.handleNewSkill} skillsArr={skillsArr} handleChangedSkill={this.handleChangedSkill} handleSkill={this.handleSkill} handleDelSkill={this.handleDelSkill}/> */}
+          <div className="container">
+                <div className="containerSection">
+                    <h2 className="formSection">Personal Information</h2>
+                    <PersonalForm handleNameChange={handleNameChange} />
+                    {/* Personal Info Component - Always loads */}
+                </div>
+
+                <div className="containerSection">
+                    <h2>Employment Experience</h2>
+                    <EmploymentForm />
+                    {/* Dynamically load employment information - Use {employment} to create an array in the render section. This allows me to add additional employment as needed */}
+                </div>
+
+                <div className="containerSection">
+                    <h2>Education</h2>
+                    {/* Dynamically add education */}
+                </div>
+
+                <div className="containerSection">
+                    <h2>Skills</h2>
+                    <SkillsForm handleNewSkill={handleNewSkill} skillsArr={skillsArr} handleSkill={handleSkill}/>
+                    {/* Dynamically add skills */}
+                </div>
+            </div>
+
+
+          {/* resumeManager */}
+          <div className="container resumeContainer">
+                <PersonalResume persInfo={persInfo}/>
+                <br />
+                <div>
+                    <h2 className='resuHeader'>Employment Experience</h2>
+                    <EmploymentResume />
+                    {/* Dynamically load employment information - Use {employment} to create an array in the render section. This allows me to add additional employment as needed */}
+                </div>
+                <br />
+                <div>
+                    <h2 className='resuHeader'>Education</h2>
+                    <EducationResume />
+                    {/* Dynamically add education */}
+                </div>
+                    <br />
+                <div>
+                    <h2 className='resuHeader'>Skills</h2>
+                    <SkillsResume skillsArr={skillsArr}/>
+                    {/* Dynamically add skills */}
+                </div>
+
+
+            </div>
         </div>
       </div>
     );
