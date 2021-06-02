@@ -2,7 +2,7 @@ import React from "react";
 
 function SkillsForm(props) {
 
-    const { handleNewSkill, handleChangedSkill, skillsArr } = props;
+    const { handleNewSkill, skillsArr, handleSkill } = props;
 
 
     //This loops through the elements and adds the appropriate amount of text elements to the page
@@ -10,7 +10,8 @@ function SkillsForm(props) {
         return (
             <div key={skill.id}>
                 <label htmlFor={skill.id}>Enter Skill</label>
-                <input type="text" id={skill.id} name={skill.id} placeholder="JavaScript" onChange={handleChangedSkill} ></input>
+                <input type="text" id={skill.id} name={skill.id} placeholder="JavaScript" onChange={handleSkill} ></input>
+                <button className="delSkill" id={skill.id} onClick={handleSkill}>X</button>
             </div>
         )
     })
@@ -18,7 +19,7 @@ function SkillsForm(props) {
     return (
         <div>
             {skillList}
-            <button id="addSkill" onClick={handleNewSkill} >Add Skill</button>
+            <button className="addSkill" onClick={handleNewSkill} >Add Skill</button>
         </div>
     )
 }

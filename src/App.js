@@ -8,7 +8,7 @@ import ResumeManager from "./components/ResumeManager";
 
 class App extends React.Component {
 
-  constructor () {
+  constructor() {
     super()
 
     this.state = {
@@ -37,9 +37,9 @@ class App extends React.Component {
   }
 
 
-//Steps
-// User clicks 'add skill', this creates a new skill object and appends it to the skill array in App.js
-handleNewSkill = (e) => {
+  //Functions to edit skill
+  // User clicks 'add skill', this creates a new skill object and appends it to the skill array in App.js
+  handleNewSkill = () => {
     let skill = {
       skillDescr: '',
       id: uniqid(),
@@ -47,38 +47,39 @@ handleNewSkill = (e) => {
 
     this.setState({
       skillsArr: this.state.skillsArr.concat(skill)
-
-    }, () => console.log(this.state.skillsArr) )
+    })
   }
 
-  handleChangedSkill = (e) => {
-
+  //Handles changing or deleting a skill. If the className of the target is delSkill, then it deletes the appropriate skill from the 
+  //array. If there isn't a className 'delSkill', then it just changes the text
+  handleSkill = (e) => {
     let index = this.state.skillsArr.findIndex(skill => {
       return (skill.id === e.target.id)
     })
 
     let tempArr = [...this.state.skillsArr];
-
-    tempArr[index].skillDescr = e.target.value;
+    if (e.target.className === 'delSkill'){
+      tempArr.splice(index, 1);
+    }
+    else {
+      tempArr[index].skillDescr = e.target.value;
+    }
 
     this.setState({
       skillsArr: tempArr
     })
-
-    console.log(this.state.skillsArr)
   }
-
 
   // This handles loading, and saving data dynamically for the personal information
   handleNameChange = (e) => {
     console.log(e.target.id)
 
     // Start of experiment
-    let newName= this.state.persInfo.name;
-    let newPhone= this.state.persInfo.phone;
-    let newEmail= this.state.persInfo.email;
-    let newAddress= this.state.persInfo.address;
-    let newObjective= this.state.persInfo.objective;
+    let newName = this.state.persInfo.name;
+    let newPhone = this.state.persInfo.phone;
+    let newEmail = this.state.persInfo.email;
+    let newAddress = this.state.persInfo.address;
+    let newObjective = this.state.persInfo.objective;
 
 
     if (e.target.id === 'name') {
@@ -93,7 +94,7 @@ handleNewSkill = (e) => {
     else if (e.target.id === 'address') {
       newAddress = e.target.value
     }
-    else{
+    else {
       newObjective = e.target.value
     }
 
@@ -105,7 +106,7 @@ handleNewSkill = (e) => {
         address: newAddress,
         objective: newObjective
       }
-    }, () => console.log(this.state.persInfo) )
+    }, () => console.log(this.state.persInfo))
   };
 
   render() {
@@ -116,7 +117,8 @@ handleNewSkill = (e) => {
       <div className="pageWrapper">
         <Header />
         <div className="resumeWrapper">
-          <FormManager handleNameChange={this.handleNameChange} handleNewSkill={this.handleNewSkill} skillsArr={skillsArr} handleChangedSkill={this.handleChangedSkill}/>
+          {/* formManager */}
+          <FormManager handleNameChange={this.handleNameChange} handleNewSkill={this.handleNewSkill} skillsArr={skillsArr} handleChangedSkill={this.handleChangedSkill} handleSkill={this.handleSkill} handleDelSkill={this.handleDelSkill}/>
           <ResumeManager persInfo={persInfo} skillsArr={skillsArr} />
         </div>
       </div>

@@ -11,8 +11,10 @@ class FormManager extends React.Component {
     //     super(props)
     // }
 
-
+    
     render() {
+        const { handleNewSkill, handleChangedSkill, handleDelSkill, skillsArr, handleSkill} = this.props;
+
         return (
             <div className="container">
                 <div className="containerSection">
@@ -34,7 +36,7 @@ class FormManager extends React.Component {
 
                 <div className="containerSection">
                     <h2>Skills</h2>
-                    <SkillsForm handleNewSkill={this.props.handleNewSkill} skillsArr={this.props.skillsArr} handleChangedSkill={this.props.handleChangedSkill}/>
+                    <SkillsForm handleNewSkill={handleNewSkill} skillsArr={skillsArr} handleChangedSkill={handleChangedSkill} handleDelSkill={handleDelSkill} handleSkill={handleSkill}/>
                     {/* Dynamically add skills */}
                 </div>
 
