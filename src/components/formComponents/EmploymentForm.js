@@ -2,41 +2,41 @@ import React from "react";
 
 
 function EducationForm(props) {
+    const { handleNewEmployment, handleEmployment, employmentArr } = props;
 
-    let employmentSection = [];
+    const employmentSection = employmentArr.map((job, index) => {
+        return (
+            <div key={job.id}>
+                <div id="sectionTitle">
+                    <h3>Employer {index + 1}</h3>
+                    <button className="delSkill" id={job.id} onClick={handleEmployment}>X</button>
+                </div>
+                <form>
+                    <label htmlFor="workName">Company Name</label>
+                    <input type="text" className={job.id} id="workName" name="workName" placeholder={job.workName} onChange={handleEmployment}></input>
 
+                    <label htmlFor="workLocation">Company Location</label>
+                    <input type="text" className={job.id} id="workLocation" name="workLocation" placeholder={job.workLocation} onChange={handleEmployment}></input>
 
-    const newEmploymentHandler = () => {
-            console.log('worked')
-        // employmentSection.push(createNewForm());
-        // console.log(educationSection);
-        // console.log('would add new employment section')
-    }
+                    <label htmlFor="role">Role</label>
+                    <input type="text" className={job.id} id="role" name="role" placeholder={job.role} onChange={handleEmployment}></input>
 
-    const createNewForm = () => {
-        // return (
-        //     <form>
-        //         <label htmlFor="workName">Company Name</label>
-        //         <input type="text" id="workName" name="workName" placeholder="Company Name"></input>
+                    <label htmlFor="workDates">Dates Worked - Example: May 2018-Present</label>
+                    <input type="text" className={job.id} id="workDates" name="workDates" placeholder={job.workDates} onChange={handleEmployment}></input>
 
-        //         <label htmlFor="workLocation">Company Location</label>
-        //         <input type="text" id="workLocation" name="workLocation" placeholder="Company Location"></input>
+                    <label htmlFor="workAchievements">Description of Role</label>
+                    <textarea className={job.id} id="workAchievements" name="workAchievements" placeholder={job.role} onChange={handleEmployment}></textarea>
+                </form>
+            </div>
+        )
+    });
 
-        //         <label htmlFor="role">Role</label>
-        //         <input type="text" id="role" name="role" placeholder="Role"></input>
-
-        //         <label htmlFor="workDates">Dates Worked - Example: May 2018-Present</label>
-        //         <input type="text" id="workDates" name="workDates" placeholder="Dates Worked - Example: May 2018-Present" ></input>
-
-        //         <label htmlFor="workAchievements">Description of Role</label>
-        //         <textarea id="workAchievements" name="workAchievements" placeholder="Description of Role" ></textarea>
-        //     </form>
-        // )
-    }
 
     return (
-        <button className="newEploymentButton" onClick={newEmploymentHandler}>+ Add</button>
-        // {employmentSection}
+        <div>
+            {employmentSection}
+            <button className="newEploymentButton" onClick={handleNewEmployment}>+ Add</button>
+        </div>
     )
 }
 

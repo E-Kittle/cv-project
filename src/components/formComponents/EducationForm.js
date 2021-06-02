@@ -22,7 +22,7 @@ function EducationForm(props) {
             <input type="text" id="schoolEnd" name="schoolEnd" placeholder="End Date: Any Format" onChange={}></input> */}
 
             {/* <label htmlFor="schoolAchievements">Description of Achievements</label>
-            <textarea id="schoolAchievements" name="schoolAchievements" placeholder="Description of Achievements" onChange={}></textarea> */} */}
+            <textarea id="schoolAchievements" name="schoolAchievements" placeholder="Description of Achievements" onChange={}></textarea> */} 
         </form>
     )
 }
