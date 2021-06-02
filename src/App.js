@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import uniqid from 'uniqid';
 import './styles/globalStyles.css';
 import Header from "./components/Header";
 import FormManager from "./components/FormManager";
@@ -34,6 +35,39 @@ class App extends React.Component {
       skillsArr: [],
     }
   }
+
+
+//Steps
+// User clicks 'add skill', this creates a new skill object and appends it to the skill array in App.js
+handleNewSkill = (e) => {
+    let skill = {
+      skillDescr: '',
+      id: uniqid(),
+    }
+
+    this.setState({
+      skillsArr: this.state.skillsArr.concat(skill)
+
+    }, () => console.log(this.state.skillsArr) )
+  }
+
+  handleChangedSkill = (e) => {
+
+    let index = this.state.skillsArr.findIndex(skill => {
+      return (skill.id === e.target.id)
+    })
+
+    let tempArr = [...this.state.skillsArr];
+
+    tempArr[index].skillDescr = e.target.value;
+
+    this.setState({
+      skillsArr: tempArr
+    })
+
+    console.log(this.state.skillsArr)
+  }
+
 
   // This handles loading, and saving data dynamically for the personal information
   handleNameChange = (e) => {
@@ -75,15 +109,15 @@ class App extends React.Component {
   };
 
   render() {
-    const { persInfo } = this.state;
+    const { persInfo, skillsArr } = this.state;
 
 
     return (
       <div className="pageWrapper">
         <Header />
         <div className="resumeWrapper">
-          <FormManager handleNameChange={this.handleNameChange}/>
-          <ResumeManager persInfo={persInfo} />
+          <FormManager handleNameChange={this.handleNameChange} handleNewSkill={this.handleNewSkill} skillsArr={skillsArr} handleChangedSkill={this.handleChangedSkill}/>
+          <ResumeManager persInfo={persInfo} skillsArr={skillsArr} />
         </div>
       </div>
     );

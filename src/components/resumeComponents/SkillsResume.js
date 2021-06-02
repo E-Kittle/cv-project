@@ -1,16 +1,22 @@
 import React from 'react';
 
 function SkillsResume(props) {
-    let elements = [];
-    // map through the skills array to create the elements then load them all in at once
+    const { skillsArr } = props;
+
+
+    const skillRList = skillsArr.map((skill) => {
+        return (
+            <li key={skill.id}>{skill.skillDescr}</li>
+        )
+    })
+
 
     return(
         <ul>
-            {/* {elements}   --Preferred method for tomorrow */}
-
-            <li>Proficiency in JavaScript</li>
+            {skillRList}
         </ul>
     )
 }
 
 export default SkillsResume;
+

@@ -1,19 +1,24 @@
 import React from "react";
 
-//Does not have to retain state so this can be a function
-
 function SkillsForm(props) {
 
-    let element = (
-        <div>
-            <label htmlFor="skill">Enter Skill</label>
-            <input type="text" id="skill" name="skill" placeholder="JavaScript"></input>
-        </div>
-    )
+    const { handleNewSkill, handleChangedSkill, skillsArr } = props;
 
-    return(
+
+    //This loops through the elements and adds the appropriate amount of text elements to the page
+    const skillList = skillsArr.map((skill) => {
+        return (
+            <div key={skill.id}>
+                <label htmlFor={skill.id}>Enter Skill</label>
+                <input type="text" id={skill.id} name={skill.id} placeholder="JavaScript" onChange={handleChangedSkill} ></input>
+            </div>
+        )
+    })
+
+    return (
         <div>
-            <button id="addSkill">Add Skill</button>
+            {skillList}
+            <button id="addSkill" onClick={handleNewSkill} >Add Skill</button>
         </div>
     )
 }

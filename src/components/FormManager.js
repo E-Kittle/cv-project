@@ -34,7 +34,7 @@ class FormManager extends React.Component {
 
                 <div className="containerSection">
                     <h2>Skills</h2>
-                    <SkillsForm />
+                    <SkillsForm handleNewSkill={this.props.handleNewSkill} skillsArr={this.props.skillsArr} handleChangedSkill={this.props.handleChangedSkill}/>
                     {/* Dynamically add skills */}
                 </div>
 

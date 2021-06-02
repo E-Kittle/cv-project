@@ -13,27 +13,27 @@ class ResumeManager extends React.Component {
 
 
     render() {
-        const { persInfo } = this.props;
+        const { persInfo, skillsArr } = this.props;
 
         return (
             <div className="container resumeContainer">
                 <PersonalResume persInfo={persInfo}/>
                 <br />
                 <div>
-                    <h2 class='resuHeader'>Employment Experience</h2>
+                    <h2 className='resuHeader'>Employment Experience</h2>
                     <EmploymentResume />
                     {/* Dynamically load employment information - Use {employment} to create an array in the render section. This allows me to add additional employment as needed */}
                 </div>
                 <br />
                 <div>
-                    <h2 class='resuHeader'>Education</h2>
+                    <h2 className='resuHeader'>Education</h2>
                     <EducationResume />
                     {/* Dynamically add education */}
                 </div>
                     <br />
                 <div>
-                    <h2 class='resuHeader'>Skills</h2>
-                    <SkillsResume />
+                    <h2 className='resuHeader'>Skills</h2>
+                    <SkillsResume skillsArr={skillsArr}/>
                     {/* Dynamically add skills */}
                 </div>
 
